@@ -4,10 +4,10 @@
 # Load libraries and functions
 ################################################################
 
-source(here("R/ggplot_themes.R"))
-source(here("R/calibration/calibration_LF2_function.R")) 
-source(here("R/AUC_CV.R"))
-source(here("R/calibration/brier_score.R"))
+source(here("load/functions/ggplot_themes.R"))
+source(here("load/functions/calibration_LF2_function.R")) 
+source(here("load/functions/AUC_CV.R"))
+source(here("load/functions/brier_score.R"))
 
 ################################################################
 # Load TrialNet Data

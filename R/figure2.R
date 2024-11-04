@@ -1,7 +1,4 @@
 
-source(here("R/calibration/brier_score.R"))
-
-
 
 ## load models
 load(here(paste0(pathSaveTNModels,"app_models/TrialNet_strata_model_1-7.RData")))
@@ -143,9 +140,5 @@ ggplot(results_df, aes(x = Dataset, y = Mean, fill = Scenario)) +
   theme_articles()+
   scale_fill_brewer(palette = "Set2") +
   theme(legend.position= "none")
-
-ggsave(here("figures/new_figures/stratified_TN_brier_score.JPEG"), # where you save
-       dpi = 1000, #quality of image
-       width = 13, height = 7)
-# 
+ 
 
