@@ -4,7 +4,7 @@
 # pre-requisites / dependencies
 ################################################################
 
-# source(here("R/recalibration_paper/load_data.R"))
+# source(here("load_data/load_data.R"))
 
 
 ################################################################
@@ -175,7 +175,7 @@ age1_7_graph <- ggplot(dt_1_7,aes(x = predict.grid, y = predict.calibrate, fill 
   xlab(paste0("Predicted probability - ",predicted_horizon,"-year horizon")) +
   ylab(paste0("Observed probability - ",predicted_horizon,"-year horizon")) +
   theme_presentation()
-ggsave(here("figures/new_figures/calibration_age1_7.JPEG"), dpi = 300, width = 12, height = 7)
+
 
 age7_18_graph <- ggplot(dt_7_18,aes(x = predict.grid, y = predict.calibrate, fill = model, color = model)) +
   geom_line() +
@@ -185,7 +185,7 @@ age7_18_graph <- ggplot(dt_7_18,aes(x = predict.grid, y = predict.calibrate, fil
   xlab(paste0("Predicted probability - ",predicted_horizon,"-year horizon")) +
   ylab(paste0("Observed probability - ",predicted_horizon,"-year horizon")) +
   theme_presentation()
-ggsave(here("figures/new_figures/calibration_age7_18.JPEG"), dpi = 300, width = 12, height = 7)
+
 
 age18_graph <- ggplot(dt_18,aes(x = predict.grid, y = predict.calibrate, fill = model, color = model)) +
   geom_line() +
@@ -195,7 +195,7 @@ age18_graph <- ggplot(dt_18,aes(x = predict.grid, y = predict.calibrate, fill = 
   xlab(paste0("Predicted probability - ",predicted_horizon,"-year horizon")) +
   ylab(paste0("Observed probability - ",predicted_horizon,"-year horizon")) +
   theme_presentation()
-ggsave(here("figures/new_figures/calibration_age18.JPEG"), dpi = 300, width = 12, height = 7)
+
 
 
 
@@ -208,19 +208,19 @@ density1_7 <- ggplot(test_age1_7) +
   geom_histogram(aes(x = old.estimates), color = "grey", fill="red", alpha = 0.5, bins = 15) + 
   geom_histogram(aes(x = new.estimates), color = "grey", fill="lightblue", alpha = 0.5, bins = 15) + theme_presentation() + 
   coord_cartesian(xlim = c(0, 1))
-ggsave(here("figures/new_figures/density_age1_7.JPEG"), dpi = 300, width = 12, height = 7)
+
 
 density7_18 <- ggplot(test_age7_18) +
   geom_histogram(aes(x = old.estimates), color = "grey", fill="red", alpha = 0.5, bins = 15) + 
   geom_histogram(aes(x = new.estimates), color = "grey", fill="lightblue", alpha = 0.5, bins = 15) + theme_presentation() +
   coord_cartesian(xlim = c(0, 1))
-ggsave(here("figures/new_figures/density_age7_18.JPEG"), dpi = 300, width = 12, height = 7)
+
 
 density18 <- ggplot(test_age18) +
   geom_histogram(aes(x = old.estimates), color = "grey", fill="red", alpha = 0.5, bins = 15) + 
   geom_histogram(aes(x = new.estimates), color = "grey", fill="lightblue", alpha = 0.5, bins = 15) + theme_presentation() + 
   coord_cartesian(xlim = c(0, 1))
-ggsave(here("figures/new_figures/density_age18.JPEG"), dpi = 300, width = 12, height = 7)
+
 
 
 
@@ -246,7 +246,7 @@ all_recalibration <- ggplot(dt,aes(x = predict.grid, y = predict.calibrate, fill
   theme_presentation() + 
   theme(legend.key.width = unit(3,"cm"))
 all_recalibration
-ggsave(here("figures/new_figures/all_recalibrarion.JPEG"), dpi = 300, width = 13, height = 7)
+
 
 
 
@@ -271,7 +271,7 @@ all_original <- ggplot(dt,aes(x = predict.grid, y = predict.calibrate, fill = `S
   theme_presentation() + 
   theme(legend.key.width = unit(3,"cm"))
 all_original
-ggsave(here("figures/new_figures/all_original.JPEG"), dpi = 300, width = 13, height = 7)
+
 
 
 dt_50 <- dt %>%
