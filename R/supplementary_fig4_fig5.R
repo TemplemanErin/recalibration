@@ -4,8 +4,8 @@
 # pre-requisites / dependencies
 ################################################################
 
-source(here("R/recalibration_paper/load_data.R"))
-source(here("R/recalibration_paper/recalibration.R"))
+source(here("load/load_data.R"))
+source(here("R/recalibration.R"))
 
 
 ################################################################
