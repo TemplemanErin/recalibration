@@ -1,9 +1,8 @@
-# Recalibration Code - TrialNet prediction model
+#  recalibrated combined genetic risk score, derived in a genetically selected birth-cohort, offers accurate T1D prediction in an islet autoantibody-positive cohort
 
-This project includes the code utilised within the paper "A recalibrated combined genetic risk score, derived in a genetically selected birth-cohort, offers accurate T1D prediction in an islet autoantibody-positive cohort".
-
-**Authors:** [List of authors with affiliations]  
-**Journal:** [BMC Medicine]  
+**Authors:**  Erin L. Templeman, Lauric A. Ferrat, Hemang M. Parikh, Lu You, Taylor Triolo, Andrea K. Steck, William A. Hagopian, Kendra Vehik, Suna Onengut-Gumuscu, Peter A. Gottlieb, Stephen S. Rich, Jeffery P. Krischer, Maria J. Redondo *, Richard A. Oram * 
+* These authirs contributed equally
+**Journal:** BMC Medicine
 
 ---
 
