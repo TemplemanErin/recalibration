@@ -4,8 +4,8 @@
 # pre-requisites / dependencies
 ################################################################
 
-source(here("R/recalibration_paper/load_data.R"))
-source(here("R/recalibration_paper/recalibration.R"))
+source(here("load/load_data.R"))
+source(here("R/recalibration.R"))
 age1_7_recalibrated <- load(here(paste0(pathSaveTNModels, "paper_models/age1_7_recalibrated.RData")))
 age8_17_recalibrated <- load(here(paste0(pathSaveTNModels, "paper_models/age8_17_recalibrated.RData")))
 age18_recalibrated <- load(here(paste0(pathSaveTNModels, "paper_models/age18_recalibrated.RData")))
