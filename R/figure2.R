@@ -1,7 +1,4 @@
 
-source(here("R/calibration/brier_score.R"))
-
-
 
 ## load models
 load(here(paste0(pathSaveTNModels,"app_models/TrialNet_strata_model_1-7.RData")))
