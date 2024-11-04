@@ -5,7 +5,7 @@
 ################################################################
 
 
-# source(here("R/recalibration_paper/load_data.R"))
+# source(here("load/load_data.R"))
 
 
 
@@ -47,6 +47,3 @@ plot2 <- ggplot(dt,aes(x = predict.grid, y = predict.calibrate, fill = model, co
   xlab(paste0("Predicted probability - ",predicted_horizon,"-year horizon")) +
   ylab(paste0("Observed probability - ",predicted_horizon,"-year horizon")) +
   theme_presentation()
-
-ggsave(here("figures/paper_figures/choice_of_landmark_model.JPEG"), dpi = 300,
-       width = 12, height = 7)
