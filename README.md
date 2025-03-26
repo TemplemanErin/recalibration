@@ -11,6 +11,7 @@ For any questions about code on this page please contact Erin Templeman by email
 1. [Project Overview](#project-overview)
 2. [Installation](#installation)
 3. [Usage](#usage)
+4. [Recalibration Methodology](#recalibration-method)
 ---
 ### Project Overview
 The project aims to assess the generalisability of a type 1 diabetes (T1D) prediction model across two cohorts: one where genetically-high risk children are followed prospectively from birth, and the validation cohort includes relatives of individuals living with T1D who were cross-sectionally screened for autoantibodies. 
@@ -27,15 +28,16 @@ Required files:
 ### Usage
 - "main.R" and "load_data.R" will be required to run any script
 - "recalibration.R" performs the logisitc recalibration which adjusts for the baseline risk and adjusting the coefficients by one factor
----
 
 ### Recalibration Methodology
 1. Predict Linear Predictors from initial model in both train and testing data
-trainData_lp <- predict(original_model, type = "lp", newdata=trainData)
-testData_lp <- predict(original_model, type = "lp", newdata=testData)
+
+- trainData_lp <- predict(original_model, type = "lp", newdata=trainData)
+- testData_lp <- predict(original_model, type = "lp", newdata=testData)
 
 2. Train a survival cox model using linear predictors, stratified by number of autoantibodies
-e.g. new_model <- coxph(Surv(time,status) ~ lp + strata(number_autoantibody), data = trainData, x = TRUE)
+- new_model <- coxph(Surv(time,status) ~ lp + strata(number_autoantibody), data = trainData, x = TRUE)
 
-3. Test the model performance using discrimination (metric: ROC AUC) and calibration (metrics: Brier score and smoothed calibration curves)
+3. Test the new_model performance using discrimination (metric: ROC AUC) and calibration (metrics: Brier score and smoothed calibration curves)
 
+---
