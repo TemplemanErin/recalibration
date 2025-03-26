@@ -29,3 +29,14 @@ Required files:
 - "recalibration.R" performs the logisitc recalibration which adjusts for the baseline risk and adjusting the coefficients by one factor
 ---
 
+### Recalibration Methodology
+# Split data into train and testing datasets
+1. Predict Linear Predictors from initial model in both train and testing data
+trainData_lp <- predict(original_model, type = "lp", newdata=trainData)
+testData_lp <- predict(original_model, type = "lp", newdata=testData)
+
+2. Train a survival cox model using linear predictors, stratified by number of autoantibodies
+e.g. new_model <- coxph(Surv(time,status) ~ lp + strata(number_autoantibody), data = trainData, x = TRUE)
+
+3. Test the model performance using discrimination (metric: ROC AUC) and calibration (metrics: Brier score and smoothed calibration curves)
+
