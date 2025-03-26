@@ -30,7 +30,6 @@ Required files:
 ---
 
 ### Recalibration Methodology
-# Split data into train and testing datasets
 1. Predict Linear Predictors from initial model in both train and testing data
 trainData_lp <- predict(original_model, type = "lp", newdata=trainData)
 testData_lp <- predict(original_model, type = "lp", newdata=testData)
